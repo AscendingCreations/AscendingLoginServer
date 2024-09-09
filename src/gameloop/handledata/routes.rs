@@ -146,6 +146,24 @@ pub async fn handle_login(
     let reconnect_code = data.read::<String>()?;
     let server_name = data.read::<String>()?;
 
+    if let Some(token) = storage.server_names.get(&server_name) {
+        if let Some(server) = storage.servers.get(token) {
+            if server.players_on + 1 >= server.max_players {
+                return send_infomsg(
+                    storage,
+                    client,
+                    "Server is full please try another.".into(),
+                    true,
+                )
+                .await;
+            }
+        } else {
+            return send_infomsg(storage, client, "Can't find Server.".into(), true).await;
+        }
+    } else {
+        return send_infomsg(storage, client, "Can't find Server.".into(), true).await;
+    }
+
     if APP_MAJOR > appmajor && APP_MINOR > appminior && APP_REVISION > apprevision {
         return send_infomsg(storage, client, "Client needs to be updated.".into(), true).await;
     }
