@@ -1,0 +1,14 @@
+listen = '0.0.0.0'
+clients_port = 7010
+servers_port = 7011
+server_cert = 'keys/server.crt'
+server_key = 'keys/server-key.pem'
+ca_root = 'keys/ca-crt.pem'
+maxconnections = 500
+database = 'ascending'
+host = '127.0.0.1'
+port = 5432
+username = 'server'
+password = 'test'
+level_filter = "Info"
+enable_backtrace = false

@@ -1,0 +1,9 @@
+target/
+*.dll
+*.pdb
+*.lib
+out/
+*.txt
+/ServerLog.txt
+.VSCodeCounter/
+settings.toml
