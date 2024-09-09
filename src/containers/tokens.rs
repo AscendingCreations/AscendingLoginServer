@@ -3,6 +3,8 @@ use jsonwebtoken::{DecodingKey, EncodingKey, Header, TokenData, Validation};
 use rand::Rng;
 use serde::{de::DeserializeOwned, Serialize};
 
+//Credits @Stephan van schaik's
+
 pub const KEY_LENGTH: usize = 64;
 pub const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
     abcdefghijklmnopqrstuvwxyz\

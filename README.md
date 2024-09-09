@@ -1,5 +1,5 @@
 <h1 align="center">
- AscendingServer
+ Ascending Login Server
 </h1>
 Open Source Game Login Server written in rust. Part of Ascending Source.
 
